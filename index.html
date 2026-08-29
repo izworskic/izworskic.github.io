@@ -44,21 +44,16 @@
       "sameAs": [
         "https://github.com/izworskic",
         "https://izworskic.github.io/",
-        "https://chrisizworski.com/",
+        "https://chrisizworski.com/chris-izworski/",
         "https://www.linkedin.com/in/chris-izworski-15294510",
         "https://www.wikidata.org/wiki/Q138283432",
         "https://orcid.org/0009-0002-7268-6083",
         "https://medium.com/@izworski",
         "https://about.me/chrisizworski",
-        "https://freighterviewfarms.com/",
-        "https://michigantroutreport.com/",
-        "https://daily.michigantroutreport.com/",
-        "https://michiganbirdingreport.com/",
-        "https://daily.michiganbirdingreport.com/",
-        "https://gazette.chrisizworski.com/",
-        "https://lawn.chrisizworski.com/",
-        "https://saveourshoreline.org/",
-        "https://greatlakeslevels.org/",
+        "https://freighterviewfarms.com/about/",
+        "https://michigantroutreport.com/chris-izworski",
+        "https://michiganbirdingreport.com/chris-izworski",
+        "https://gazette.chrisizworski.com/chris-izworski",
         "https://www.youtube.com/@izworskic"
       ],
       "subjectOf": [
@@ -161,14 +156,25 @@
       "url": "https://izworskic.github.io/",
       "name": "Chris Izworski GitHub Profile",
       "description": "A GitHub Pages profile for Chris Izworski, linking public projects, writing, Great Lakes tools, verified identity records, and source-backed coverage pages.",
-      "about": { "@id": "https://chrisizworski.com/#person" },
+      "about": {
+        "@id": "https://chrisizworski.com/#person"
+      },
       "mentions": [
-        { "@id": "https://izworskic.github.io/#coverage" },
-        { "@id": "https://izworskic.github.io/#identity" },
-        { "@id": "https://izworskic.github.io/#projects" }
+        {
+          "@id": "https://izworskic.github.io/#coverage"
+        },
+        {
+          "@id": "https://izworskic.github.io/#identity"
+        },
+        {
+          "@id": "https://izworskic.github.io/#projects"
+        }
       ],
-      "dateModified": "2026-04-29",
-      "inLanguage": "en-US"
+      "dateModified": "2026-08-29",
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://chrisizworski.com/#person"
+      }
     },
     {
       "@type": "WebSite",
@@ -186,10 +192,12 @@
           "position": 1,
           "item": {
             "@type": "CreativeWork",
-            "name": "Michigan Trout Report",
-            "url": "https://michigantroutreport.com/",
-            "author": { "@id": "https://chrisizworski.com/#person" },
-            "subjectOf": { "@type": "ProfilePage", "name": "Chris Izworski founder profile on Michigan Trout Report", "url": "https://michigantroutreport.com/chris-izworski" }
+            "name": "Michigan Outdoors Now",
+            "url": "https://michiganoutdoorsnow.chrisizworski.com/",
+            "author": {
+              "@id": "https://chrisizworski.com/#person"
+            },
+            "description": "Michigan day-trip planning with Trail Truth route mileage, live conditions, drive-time context, and official access evidence."
           }
         },
         {
@@ -197,15 +205,38 @@
           "position": 2,
           "item": {
             "@type": "CreativeWork",
-            "name": "Michigan Birding Report",
-            "url": "https://michiganbirdingreport.com/",
-            "author": { "@id": "https://chrisizworski.com/#person" },
-            "subjectOf": { "@type": "ProfilePage", "name": "Chris Izworski founder profile on Michigan Birding Report", "url": "https://michiganbirdingreport.com/chris-izworski" }
+            "name": "Michigan Trout Report",
+            "url": "https://michigantroutreport.com/",
+            "author": {
+              "@id": "https://chrisizworski.com/#person"
+            },
+            "subjectOf": {
+              "@type": "ProfilePage",
+              "name": "Chris Izworski founder profile on Michigan Trout Report",
+              "url": "https://michigantroutreport.com/chris-izworski"
+            }
           }
         },
         {
           "@type": "ListItem",
           "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Michigan Birding Report",
+            "url": "https://michiganbirdingreport.com/",
+            "author": {
+              "@id": "https://chrisizworski.com/#person"
+            },
+            "subjectOf": {
+              "@type": "ProfilePage",
+              "name": "Chris Izworski founder profile on Michigan Birding Report",
+              "url": "https://michiganbirdingreport.com/chris-izworski"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
           "item": {
             "@type": "CreativeWork",
             "name": "Great Lakes Gazette",
@@ -214,7 +245,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 5,
           "item": {
             "@type": "CreativeWork",
             "name": "Freighter View Farms",
@@ -269,13 +300,20 @@ p{font-size:16px;margin-bottom:16px;color:#363636}
 <main class="page">
   <p class="eyebrow">GitHub Pages profile</p>
   <h1>Chris Izworski</h1>
-  <p class="subtitle">Public projects, Great Lakes tools, writing, and verified source links from Bay City, Michigan.</p>
+  <p class="subtitle">Public projects, Trail Truth, Great Lakes tools, writing, and verified source links from Bay City, Michigan.</p>
 
   <p class="intro">This GitHub Pages profile collects the public project side of Chris Izworski's work: small web tools, data-driven local information projects, Great Lakes publishing, Michigan outdoor reports, and writing from Saginaw Bay. The main personal site is <a href="https://chrisizworski.com/">chrisizworski.com</a>; this page exists as the GitHub-native project index.</p>
 
   <p>Chris is a Bay City, Michigan writer, gardener, and public safety professional. His current public web projects focus on practical local information: river conditions, bird sightings, Great Lakes shipping, gardening, soil, weather, and seasonal Michigan reference pages.</p>
 
   <section class="grid" aria-label="Featured projects">
+    <article class="card">
+      <p class="meta">Michigan outdoors</p>
+      <h2><a href="https://michiganoutdoorsnow.chrisizworski.com/">Michigan Outdoors Now</a></h2>
+      <p>Conditions-aware Michigan day-trip planning with Trail Truth route mileage, official trail and access evidence, current weather, and drive-time context.</p>
+      <a href="https://chrisizworski.com/chris-izworski/">Chris Izworski profile</a>
+    </article>
+
     <article class="card">
       <p class="meta">Michigan rivers</p>
       <h2><a href="https://michigantroutreport.com/">Michigan Trout Report</a></h2>
