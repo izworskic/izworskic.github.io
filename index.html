@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Izworski | GitHub, Public Projects, and Verified Source Links</title>
-<meta name="description" content="Chris Izworski on GitHub: public projects, Great Lakes tools, Michigan trout and birding reports, gardening writing, and verified source links including MLive, WSGW, WNEM, WCMU, ORCID, and Wikidata.">
+<title>Chris Izworski | Public Tools, Code, and Engineering Notes</title>
+<meta name="description" content="Chris Izworski's public project portfolio: NYC crossing reliability, Niagara border decision logic, Great Lakes Levels, and the code and tests behind practical public-data tools.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://izworskic.github.io/">
 <link rel="me" href="https://www.linkedin.com/in/chris-izworski-15294510">
@@ -15,13 +15,15 @@
 <link rel="me" href="https://chrisizworski.com/chris-izworski/">
 <link rel="me" href="https://www.wikidata.org/wiki/Q138283432">
 <link rel="me" href="https://orcid.org/0009-0002-7268-6083">
-<meta property="og:title" content="Chris Izworski | GitHub, Public Projects, and Verified Source Links">
-<meta property="og:description" content="Public project profile for Chris Izworski: GitHub, Great Lakes tools, Michigan outdoor reports, Freighter View Farms, and verified source links.">
+<meta property="og:title" content="Chris Izworski | Public Tools, Code, and Engineering Notes">
+<meta property="og:description" content="Explore Chris Izworski's public-data tools and inspect the code, tests, and engineering decisions behind them.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://izworskic.github.io/">
 <meta property="og:image" content="https://chrisizworski.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chrisizworski.com/og-image.png">
+<meta name="twitter:title" content="Chris Izworski | Public Tools, Code, and Engineering Notes">
+<meta name="twitter:description" content="Explore Chris Izworski's public-data tools and inspect the code, tests, and engineering decisions behind them.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,7 +55,6 @@
         "https://freighterviewfarms.com/about/",
         "https://michigantroutreport.com/chris-izworski",
         "https://michiganbirdingreport.com/chris-izworski",
-        "https://gazette.chrisizworski.com/chris-izworski",
         "https://www.youtube.com/@izworskic"
       ],
       "subjectOf": [
@@ -92,11 +93,6 @@
           "@type": "ProfilePage",
           "name": "Chris Izworski verified profile",
           "url": "https://chrisizworski.com/chris-izworski/"
-        },
-        {
-          "@type": "ProfilePage",
-          "name": "Chris Izworski ORCID record",
-          "url": "https://orcid.org/0009-0002-7268-6083"
         },
         {
           "@type": "ProfilePage",
@@ -154,8 +150,8 @@
       "@type": "ProfilePage",
       "@id": "https://izworskic.github.io/",
       "url": "https://izworskic.github.io/",
-      "name": "Chris Izworski GitHub Profile",
-      "description": "A GitHub Pages profile for Chris Izworski, linking public projects, writing, Great Lakes tools, verified identity records, and source-backed coverage pages.",
+      "name": "Chris Izworski | Public Tools, Code, and Engineering Notes",
+      "description": "Chris Izworski's public project portfolio: NYC crossing reliability, Niagara border decision logic, Great Lakes Levels, and the code and tests behind practical public-data tools.",
       "about": {
         "@id": "https://chrisizworski.com/#person"
       },
@@ -170,11 +166,22 @@
           "@id": "https://izworskic.github.io/#projects"
         }
       ],
-      "dateModified": "2026-08-29",
+      "dateModified": "2026-10-07",
       "inLanguage": "en-US",
       "mainEntity": {
         "@id": "https://chrisizworski.com/#person"
-      }
+      },
+      "author": {
+        "@id": "https://chrisizworski.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://izworskic.github.io/#website"
+      },
+      "hasPart": [
+        {
+          "@id": "https://izworskic.github.io/#projects"
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -191,29 +198,25 @@
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "CreativeWork",
-            "name": "Michigan Outdoors Now",
-            "url": "https://michiganoutdoorsnow.chrisizworski.com/",
-            "author": {
+            "@type": "WebApplication",
+            "@id": "https://chrisizworski.com/nyc-crossing/#app",
+            "name": "NYC Crossing Decision Engine",
+            "url": "https://chrisizworski.com/nyc-crossing/",
+            "creator": {
               "@id": "https://chrisizworski.com/#person"
-            },
-            "description": "Michigan day-trip planning with Trail Truth route mileage, live conditions, drive-time context, and official access evidence."
+            }
           }
         },
         {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@type": "CreativeWork",
-            "name": "Michigan Trout Report",
-            "url": "https://michigantroutreport.com/",
-            "author": {
+            "@type": "WebApplication",
+            "@id": "https://chrisizworski.com/niagara-border-crossing/#app",
+            "name": "Niagara Border Crossing Planner",
+            "url": "https://chrisizworski.com/niagara-border-crossing/",
+            "creator": {
               "@id": "https://chrisizworski.com/#person"
-            },
-            "subjectOf": {
-              "@type": "ProfilePage",
-              "name": "Chris Izworski founder profile on Michigan Trout Report",
-              "url": "https://michigantroutreport.com/chris-izworski"
             }
           }
         },
@@ -221,16 +224,12 @@
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@type": "CreativeWork",
-            "name": "Michigan Birding Report",
-            "url": "https://michiganbirdingreport.com/",
-            "author": {
+            "@type": "WebSite",
+            "@id": "https://greatlakeslevels.org/#website",
+            "name": "Great Lakes Levels",
+            "url": "https://greatlakeslevels.org/",
+            "creator": {
               "@id": "https://chrisizworski.com/#person"
-            },
-            "subjectOf": {
-              "@type": "ProfilePage",
-              "name": "Chris Izworski founder profile on Michigan Birding Report",
-              "url": "https://michiganbirdingreport.com/chris-izworski"
             }
           }
         },
@@ -239,17 +238,64 @@
           "position": 4,
           "item": {
             "@type": "CreativeWork",
-            "name": "Great Lakes Gazette",
-            "url": "https://gazette.chrisizworski.com/"
+            "@id": "https://michiganoutdoorsnow.chrisizworski.com/",
+            "name": "Michigan Outdoors Now",
+            "url": "https://michiganoutdoorsnow.chrisizworski.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
           }
         },
         {
           "@type": "ListItem",
           "position": 5,
           "item": {
-            "@type": "CreativeWork",
+            "@type": "WebSite",
+            "@id": "https://michigantroutreport.com/",
+            "name": "Michigan Trout Report",
+            "url": "https://michigantroutreport.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://michiganbirdingreport.com/",
+            "name": "Michigan Birding Report",
+            "url": "https://michiganbirdingreport.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://gazette.chrisizworski.com/",
+            "name": "Great Lakes Gazette",
+            "url": "https://gazette.chrisizworski.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://freighterviewfarms.com/",
             "name": "Freighter View Farms",
-            "url": "https://freighterviewfarms.com/"
+            "url": "https://freighterviewfarms.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
           }
         }
       ]
@@ -259,12 +305,16 @@
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,"Times New Roman",serif;background:#faf9f6;color:#2c2c2c;line-height:1.7}
+body{font-family:Georgia,"Times New Roman",serif;background:#faf9f6;color:#2c2c2c;line-height:1.7;overflow-wrap:anywhere}
+.nav{background:#fff;border-bottom:1px solid #e8e4dc;padding:14px 22px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:14px}
+.nav-inner{max-width:836px;margin:auto;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:baseline}
+.nav-inner strong{color:#2c5f2d}
 a{color:#2c5f2d;text-decoration:none;border-bottom:1px solid rgba(44,95,45,.22)}
 a:hover{border-bottom-color:#2c5f2d}
 .page{max-width:880px;margin:0 auto;padding:48px 22px 64px}
 .eyebrow{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:12px}
 h1{font-size:38px;font-weight:400;line-height:1.15;color:#171717;margin-bottom:8px}
+h3{font-size:20px;font-weight:400;line-height:1.35;margin:26px 0 10px}
 .subtitle{font-size:18px;color:#666;font-style:italic;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid #e8e4dc}
 p{font-size:16px;margin-bottom:16px;color:#363636}
 .intro{font-size:17px}
@@ -298,13 +348,32 @@ p{font-size:16px;margin-bottom:16px;color:#363636}
 <a href="/saginaw-bay/">Saginaw Bay</a>
 </div></nav>
 <main class="page">
-  <p class="eyebrow">GitHub Pages profile</p>
+  <p class="eyebrow">Public tools and code</p>
   <h1>Chris Izworski</h1>
-  <p class="subtitle">Public projects, Trail Truth, Great Lakes tools, writing, and verified source links from Bay City, Michigan.</p>
+  <p class="subtitle">Practical public-data tools, with the code and decisions behind them.</p>
 
-  <p class="intro">This GitHub Pages profile collects the public project side of Chris Izworski's work: small web tools, data-driven local information projects, Great Lakes publishing, Michigan outdoor reports, and writing from Saginaw Bay. The main personal site is <a href="https://chrisizworski.com/">chrisizworski.com</a>; this page exists as the GitHub-native project index.</p>
+  <p class="intro">Chris Izworski builds and maintains web tools that turn public data into practical decisions: comparing a bridge crossing, checking river conditions, or understanding Great Lakes water levels. This portfolio follows the engineering behind that work. You can try the tools, read the public code, and inspect the tests.</p>
 
-  <p>Chris is a Bay City, Michigan writer, gardener, and public safety professional. His current public web projects focus on practical local information: river conditions, bird sightings, Great Lakes shipping, gardening, soil, weather, and seasonal Michigan reference pages.</p>
+  <p>Chris lives on Saginaw Bay near Bay City, Michigan. His work in public safety, his interest in the Great Lakes, and his time gardening and fishing shape the questions these projects answer. The <a href="https://chrisizworski.com/chris-izworski/">personal profile</a> covers his background; <a href="/projects/">project notes</a> explain the implementations.</p>
+
+  <section aria-labelledby="engineering">
+    <h2 class="section-title" id="engineering">Inside the tools</h2>
+    <article>
+      <h3><a href="https://chrisizworski.com/nyc-crossing/">NYC Crossing Decision Engine</a></h3>
+      <p>A crossing's toll and a traffic reading answer different questions. The tool keeps crossing costs, vehicle eligibility, observed travel times, and their sources visible separately. It does not label a crossing the fastest when its travel-time evidence is not comparable.</p>
+      <p>The routing layer handles temporary failures with bounded requests and limited retries. It caches complete usable results, allowing partial failures to recover on the next request. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/nyc-crossing/traffic.js">Read the traffic implementation</a>, <a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/nyc-crossing/engine.js">decision logic</a>, and <a href="https://github.com/izworskic/chrisizworski-com/blob/main/tests/nyc-crossing-mapbox-reliability.test.js">reliability tests</a>.</p>
+    </article>
+    <article>
+      <h3><a href="https://chrisizworski.com/niagara-border-crossing/">Niagara Border Crossing Planner</a></h3>
+      <p>A shorter posted wait does not automatically justify a detour. The comparison considers direction, traveler and lane eligibility, data freshness, conflicting reports, and the additional travel involved in changing bridges. When the evidence is insufficient, the tool explains the gap instead of recommending a switch.</p>
+      <p><a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/niagara-border-crossings.js">Read the source selection and comparison logic</a> and <a href="https://github.com/izworskic/chrisizworski-com/blob/main/tests/niagara-border-crossings.test.js">tests for stale readings and source disagreement</a>.</p>
+    </article>
+    <article>
+      <h3><a href="https://greatlakeslevels.org/">Great Lakes Levels</a></h3>
+      <p>This shoreline reference presents lake levels alongside historical context and named shoreline regions. Its public repository contains the deployed HTML pages and compiled assets. The original React source is not included, a distinction documented in the repository so readers know which parts they can inspect.</p>
+      <p><a href="https://github.com/izworskic/great-lakes-levels">Browse the deployed site repository</a> and <a href="https://github.com/izworskic/great-lakes-levels/blob/main/README.md">deployment notes</a>.</p>
+    </article>
+  </section>
 
   <section class="grid" aria-label="Featured projects">
     <article class="card">
@@ -371,7 +440,7 @@ p{font-size:16px;margin-bottom:16px;color:#363636}
     <li><a href="https://freighterviewfarms.com/about/"><strong>About Chris Izworski at Freighter View Farms</strong></a><span class="desc">A personal, place-based author page tied to the garden journal on Saginaw Bay.</span></li>
   </ul>
 
-  <h2 class="section-title" id="coverage">Positive Coverage and Public Record</h2>
+  <h2 class="section-title" id="coverage">Coverage and Civic Work</h2>
   <ul class="link-list">
     <li><a href="https://www.mlive.com/news/saginaw-bay-city/2022/04/saginaw-county-central-dispatch-gets-new-director.html"><strong>MLive coverage</strong></a><span class="desc">Regional news coverage documenting the Saginaw County Central Dispatch appointment.</span></li>
     <li><a href="https://www.mlive.com/news/bay-city/2013/01/next_bay_county_911_director_p.html"><strong>Bay City Times coverage</strong></a><span class="desc">Bay County 911 director-transition coverage from the regional MLive / Bay City Times archive.</span></li>
@@ -395,7 +464,7 @@ p{font-size:16px;margin-bottom:16px;color:#363636}
     <p>This page is intentionally project-focused. For the complete biography, public record, media references, and source-backed profile, use <a href="https://chrisizworski.com/">chrisizworski.com</a> and the <a href="https://chrisizworski.com/chris-izworski-source-guide/">Chris Izworski Source Guide</a>.</p>
   </div>
 
-  <footer class="footer">Chris Izworski | GitHub Pages | Bay City, Michigan | Updated May 2026</footer>
+  <footer class="footer">Chris Izworski | GitHub Pages | Bay City, Michigan | Updated October 2026</footer>
 </main>
 </body>
 </html>

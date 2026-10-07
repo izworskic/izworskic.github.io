@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Izworski Public Projects: Michigan Trout Report, Birding Report, Great Lakes Levels, and More</title>
-<meta name="description" content="Public web projects by Chris Izworski. Michigan Trout Report, Michigan Birding Report, Great Lakes Levels Intelligence, Perfect Lawn Advisor, Freighter View Farms, and the Great Lakes Gazette.">
+<title>Chris Izworski Projects | Public Data Tools and Source Code</title>
+<meta name="description" content="Engineering notes for Chris Izworski's public tools: NYC crossing reliability, Niagara border comparisons, Great Lakes Levels, and Michigan outdoor publishing.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://izworskic.github.io/projects/">
 <link rel="me" href="https://github.com/izworskic">
@@ -13,13 +13,15 @@
 <link rel="me" href="https://orcid.org/0009-0002-7268-6083">
 <link rel="me" href="https://medium.com/@izworski">
 <link rel="me" href="https://chrisizworski.substack.com/">
-<meta property="og:title" content="Chris Izworski Public Projects: Michigan Trout Report, Birding Report, Great Lakes Levels, and More">
-<meta property="og:description" content="Public web projects by Chris Izworski. Michigan Trout Report, Michigan Birding Report, Great Lakes Levels Intelligence, Perfect Lawn Advisor, Freighter View Farms, and the Great Lakes Gazette.">
-<meta property="og:type" content="profile">
+<meta property="og:title" content="Chris Izworski Projects | Public Data Tools and Source Code">
+<meta property="og:description" content="Engineering notes for Chris Izworski's public tools: crossing reliability, source comparison, Great Lakes Levels, and Michigan outdoor publishing.">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://izworskic.github.io/projects/">
 <meta property="og:image" content="https://chrisizworski.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chrisizworski.com/og-image.png">
+<meta name="twitter:title" content="Chris Izworski Projects | Public Data Tools and Source Code">
+<meta name="twitter:description" content="Engineering notes and public code behind Chris Izworski's practical decision tools.">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -56,42 +58,37 @@
       "sameAs": [
         "https://github.com/izworskic",
         "https://izworskic.github.io/",
-        "https://chrisizworski.com/",
+        "https://chrisizworski.com/chris-izworski/",
         "https://www.linkedin.com/in/chris-izworski-15294510",
         "https://www.wikidata.org/wiki/Q138283432",
         "https://orcid.org/0009-0002-7268-6083",
         "https://medium.com/@izworski",
-        "https://chrisizworski.substack.com/",
-        "https://www.youtube.com/@izworskic",
         "https://about.me/chrisizworski",
-        "https://freighterviewfarms.com/",
-        "https://michigantroutreport.com/",
-        "https://daily.michigantroutreport.com/",
-        "https://michiganbirdingreport.com/",
-        "https://daily.michiganbirdingreport.com/",
-        "https://greatlakeslevels.org/",
-        "https://gazette.chrisizworski.com/",
-        "https://lawn.chrisizworski.com/",
-        "https://www.saveourshoreline.org/christopherizworski"
+        "https://freighterviewfarms.com/about/",
+        "https://michigantroutreport.com/chris-izworski",
+        "https://michiganbirdingreport.com/chris-izworski",
+        "https://www.youtube.com/@izworskic"
       ]
     },
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "@id": "https://izworskic.github.io/projects/#webpage",
       "url": "https://izworskic.github.io/projects/",
-      "name": "Chris Izworski Public Projects: Michigan Trout Report, Birding Report, Great Lakes Levels, and More",
-      "description": "Public web projects by Chris Izworski. Michigan Trout Report, Michigan Birding Report, Great Lakes Levels Intelligence, Perfect Lawn Advisor, Freighter View Farms, and the Great Lakes Gazette.",
+      "name": "Chris Izworski Projects | Public Data Tools and Source Code",
+      "description": "Engineering notes for Chris Izworski's public tools: NYC crossing reliability, Niagara border comparisons, Great Lakes Levels, and Michigan outdoor publishing.",
       "isPartOf": {
-        "@type": "WebSite",
-        "name": "Chris Izworski on GitHub Pages",
-        "url": "https://izworskic.github.io/"
+        "@id": "https://izworskic.github.io/#website"
       },
       "about": {
         "@id": "https://chrisizworski.com/#person"
       },
       "author": {
         "@id": "https://chrisizworski.com/#person"
+      },
+      "dateModified": "2026-10-07",
+      "mainEntity": {
+        "@id": "https://izworskic.github.io/projects/#projects"
       }
     },
     {
@@ -111,9 +108,130 @@
           "item": "https://izworskic.github.io/projects/"
         }
       ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://izworskic.github.io/projects/#projects",
+      "name": "Public tools and publishing projects by Chris Izworski",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebApplication",
+            "@id": "https://chrisizworski.com/nyc-crossing/#app",
+            "name": "NYC Crossing Decision Engine",
+            "url": "https://chrisizworski.com/nyc-crossing/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebApplication",
+            "@id": "https://chrisizworski.com/niagara-border-crossing/#app",
+            "name": "Niagara Border Crossing Planner",
+            "url": "https://chrisizworski.com/niagara-border-crossing/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://greatlakeslevels.org/#website",
+            "name": "Great Lakes Levels",
+            "url": "https://greatlakeslevels.org/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://michiganoutdoorsnow.chrisizworski.com/",
+            "name": "Michigan Outdoors Now",
+            "url": "https://michiganoutdoorsnow.chrisizworski.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://michigantroutreport.com/",
+            "name": "Michigan Trout Report",
+            "url": "https://michigantroutreport.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://michiganbirdingreport.com/",
+            "name": "Michigan Birding Report",
+            "url": "https://michiganbirdingreport.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://gazette.chrisizworski.com/",
+            "name": "Great Lakes Gazette",
+            "url": "https://gazette.chrisizworski.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "WebSite",
+            "@id": "https://freighterviewfarms.com/",
+            "name": "Freighter View Farms",
+            "url": "https://freighterviewfarms.com/",
+            "creator": {
+              "@id": "https://chrisizworski.com/#person"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://izworskic.github.io/#website",
+      "name": "Chris Izworski on GitHub Pages",
+      "url": "https://izworskic.github.io/",
+      "publisher": {
+        "@id": "https://chrisizworski.com/#person"
+      }
     }
   ]
-}</script>
+}
+</script>
 <style>
 *{box-sizing:border-box}
 body{margin:0;padding:0;font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;background:#fafaf7;line-height:1.6}
@@ -164,24 +282,36 @@ li{margin-bottom:8px;font-size:17px}
   <p class="eyebrow">Projects</p>
   <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Projects</p>
   <h1>Chris Izworski Public Projects</h1>
-  <p class="subtitle">A growing network of small web tools, data-driven local information sites, and Great Lakes publishing properties.</p>
+  <p class="subtitle">What each project does, the decisions behind it, and where to inspect the work.</p>
 
-  <p>Chris Izworski builds and maintains a network of public web projects focused on practical Michigan and Great Lakes information. Each project picks a narrow domain that the larger commercial web tends to cover poorly: river conditions for a specific set of named trout streams, bird sightings at the county level, Great Lakes water level history, lawn planning grounded in soil and climate context, and seasonal writing from a single Saginaw Bay garden. The sites share a common infrastructure spine and a consistent emphasis on owned data, durable URLs, and substantive prose over generic content.</p>
+  <p>Chris Izworski builds and maintains public web tools and publishing projects from Bay City, Michigan. These projects use different kinds of evidence: official traffic readings, river gauges, bird observations, historical lake records, and a garden journal. The engineering task is to make that evidence useful without making it appear more certain than it is.</p>
+
+  <h2>NYC Crossing Decision Engine</h2>
+  <p>The <a href="https://chrisizworski.com/nyc-crossing/">NYC Crossing Decision Engine</a> separates crossing cost from crossing conditions. Its cost model accounts for payment, vehicle class, destination-zone entry, and applicable credits. Its traffic layer identifies the source and scope of each reading. A fixed crossing probe is presented as a crossing observation rather than a complete address-to-address journey.</p>
+  <p>The reliability work is inspectable in <a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/nyc-crossing/traffic.js">traffic.js</a>. Routing calls have bounded timeouts and limited retries; failed or partial routing results do not receive the normal successful-result cache lifetime. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/tests/nyc-crossing-mapbox-reliability.test.js">The regression tests</a> exercise recovery, cache behavior, invalid responses, and source priority. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/scripts/smoke-nyc-crossing-production.mjs">The production smoke script</a> checks the page and API together and reports degraded coverage when a source is unavailable.</p>
+
+  <h2>Niagara Border Crossing Planner</h2>
+  <p>The <a href="https://chrisizworski.com/niagara-border-crossing/">Niagara Border Crossing Planner</a> compares crossings for a particular direction, traveler, and lane. It incorporates the additional travel involved in a diversion, checks whether observations are fresh enough to support a recommendation, and exposes material disagreements between federal and operator reports.</p>
+  <p>Its <a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/niagara-border-crossings.js">comparison implementation</a> can return insufficient evidence instead of naming a winner. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/tests/niagara-border-crossings.test.js">The tests</a> cover stale observations, source conflicts, traveler restrictions, and the public page's integration with the API. This is a concrete example of a product decision encoded in software: a detour recommendation needs better evidence than a lower number in one feed.</p>
+
+  <h2>Michigan Outdoors Now</h2>
+  <p><a href="https://michiganoutdoorsnow.chrisizworski.com/">Michigan Outdoors Now</a> brings Michigan day-trip planning, trail and access information, current conditions, and travel context into one project. It extends the same interest in place-specific decisions to a day outside.</p>
 
   <h2>Michigan Trout Report</h2>
-  <p>The <a href="https://michigantroutreport.com/">Michigan Trout Report</a> tracks live stream flows, water temperatures, and weather context for more than one hundred Michigan trout rivers. The site includes named river pages, technique guides, hatch reference pages, and the <a href="https://daily.michigantroutreport.com/">daily report</a> at daily.michigantroutreport.com, which publishes a fresh trout-conditions post each morning and a weekly Michigan rollup on Sundays.</p>
+  <p>The <a href="https://michigantroutreport.com/">Michigan Trout Report</a> brings stream flows, water temperatures, and weather context together for Michigan anglers. Named river pages, technique guides, hatch references, and the <a href="https://daily.michigantroutreport.com/">daily report</a> support planning around a particular river. <a href="https://michigantroutreport.com/chris-izworski">Chris's founder profile</a> describes his connection to the project.</p>
 
   <h2>Michigan Birding Report</h2>
   <p>The <a href="https://michiganbirdingreport.com/">Michigan Birding Report</a> covers Michigan bird sightings, county-level birding context, and notable species pages built around live observation data. The <a href="https://daily.michiganbirdingreport.com/">daily birding report</a> publishes a fresh Michigan birding briefing each day. Both sites are designed around the rhythm of a working Michigan birder rather than the more generic checklist style of larger national platforms.</p>
 
   <h2>Great Lakes Levels Intelligence</h2>
-  <p>The <a href="https://greatlakeslevels.org/">Great Lakes Levels Intelligence</a> app at greatlakeslevels.org is a dedicated reference for Great Lakes water level history. It includes 108 years of historical data, 25 named sub-regions, twelve property-owner specific tabs, and a focus on the questions Saginaw Bay shoreline owners actually ask. The project draws on Chris's Save Our Shoreline civic work and on a long-standing personal interest in the lakes.</p>
+  <p><a href="https://greatlakeslevels.org/">Great Lakes Levels</a> places current water levels in historical and shoreline context. It organizes information by lake and named regions, including Saginaw Bay, for people trying to understand their shoreline. Chris's connection to the bay and his Save Our Shoreline civic work explain the project's focus.</p>
+  <p>The <a href="https://github.com/izworskic/great-lakes-levels">public repository</a> contains deployed HTML and compiled JavaScript assets, rather than the original React source. Its <a href="https://github.com/izworskic/great-lakes-levels/blob/main/README.md">README</a> explains that boundary and the static deployment workflow. The <a href="https://github.com/izworskic/great-lakes-levels/blob/main/scripts/check-creator-authority.mjs">page verification script</a> checks canonical URLs and consistent creator attribution across the published HTML.</p>
 
   <h2>Perfect Lawn Advisor</h2>
   <p>The <a href="https://lawn.chrisizworski.com/">Perfect Lawn Advisor</a> at lawn.chrisizworski.com generates a graded lawn plan from a single Michigan address. The tool combines soil, weather, and turfgrass context with a Claude-generated plan, then caches the result so identical addresses return instantly. Cornerstone articles, a city directory, and a curated shop layer support the core planning workflow.</p>
 
   <h2>Great Lakes Gazette</h2>
-  <p>The <a href="https://gazette.chrisizworski.com/">Great Lakes Gazette</a> publishes a daily Great Lakes maritime briefing connecting vessel movement, lake conditions, and regional weather context. The gazette runs as a server-side rendered Next.js property with an archive of more than twenty-nine issues and a stable URL structure designed for citation rather than scroll.</p>
+  <p>The <a href="https://gazette.chrisizworski.com/">Great Lakes Gazette</a> is a Great Lakes maritime publication connecting vessel movement, lake conditions, and regional weather context. It gives the region's shipping and water information a place in the broader publishing work.</p>
 
   <h2>Freighter View Farms</h2>
   <p><a href="https://freighterviewfarms.com/">Freighter View Farms</a> is the seed-saving and Great Lakes gardening blog. The site focuses on heirloom vegetables, Zone 6a Michigan gardening, and the slow accumulation of a place-based seed library on the western shore of Saginaw Bay. Writing on the site is intentionally literary and grounded in a specific garden rather than generic gardening advice.</p>
@@ -195,7 +325,7 @@ li{margin-bottom:8px;font-size:17px}
     <a href="https://github.com/izworskic">GitHub</a> |
     <a href="https://orcid.org/0009-0002-7268-6083">ORCID</a> |
     <a href="https://medium.com/@izworski">Medium</a> |
-    Updated May 2026
+    Updated October 2026
   </footer>
 </main>
 </body>
