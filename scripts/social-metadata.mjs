@@ -81,7 +81,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   const root = rootIndex < 0 ? 'public' : process.argv[rootIndex + 1];
   assert.ok(root, '--root needs a directory');
   const check = process.argv.includes('--check');
-  const files = htmlFiles(root);
+  const files = htmlFiles(root).filter(file => {
+    const name = path.basename(file);
+    if (path.dirname(path.resolve(file)) !== path.resolve(root) || !/^google[0-9a-f]+\.html$/.test(name)) return true;
+    assert.equal(readFileSync(file, 'utf8').trim(), `google-site-verification: ${name}`,
+      'Google verification file must match its exact verification payload');
+    return false;
+  });
   const missing = [];
   for (const file of files) {
     try {
