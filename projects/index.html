@@ -86,7 +86,7 @@
       "author": {
         "@id": "https://chrisizworski.com/#person"
       },
-      "dateModified": "2026-10-07",
+      "dateModified": "2026-10-08",
       "mainEntity": {
         "@id": "https://izworskic.github.io/projects/#projects"
       }
@@ -286,9 +286,19 @@ li{margin-bottom:8px;font-size:17px}
 
   <p>Chris Izworski builds and maintains public web tools and publishing projects from Bay City, Michigan. These projects use different kinds of evidence: official traffic readings, river gauges, bird observations, historical lake records, and a garden journal. The engineering task is to make that evidence useful without making it appear more certain than it is.</p>
 
-  <h2>NYC Crossing Decision Engine</h2>
+  <h2 id="nyc-reliability">NYC Crossing Decision Engine</h2>
   <p>The <a href="https://chrisizworski.com/nyc-crossing/">NYC Crossing Decision Engine</a> separates crossing cost from crossing conditions. Its cost model accounts for payment, vehicle class, destination-zone entry, and applicable credits. Its traffic layer identifies the source and scope of each reading. A fixed crossing probe is presented as a crossing observation rather than a complete address-to-address journey.</p>
   <p>The reliability work is inspectable in <a href="https://github.com/izworskic/chrisizworski-com/blob/main/lib/nyc-crossing/traffic.js">traffic.js</a>. Routing calls have bounded timeouts and limited retries; failed or partial routing results do not receive the normal successful-result cache lifetime. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/tests/nyc-crossing-mapbox-reliability.test.js">The regression tests</a> exercise recovery, cache behavior, invalid responses, and source priority. <a href="https://github.com/izworskic/chrisizworski-com/blob/main/scripts/smoke-nyc-crossing-production.mjs">The production smoke script</a> checks the page and API together and reports degraded coverage when a source is unavailable.</p>
+
+  <h3>Why a failed request must not become a cached answer</h3>
+  <p>A traffic timeout is evidence about a request, not evidence that a bridge is clear or congested. The implementation starts five fixed Mapbox crossing probes concurrently. Each attempt has an eight-second deadline, with at most one retry for a timeout or server error. A known client error is not retried. The routing budget is therefore bounded at sixteen seconds, plus the separate bounded cache read; it is not a promise about total page load time.</p>
+  <p>Before accepting a route, the code checks its duration and distance against the intended crossing, and rejects supplied waypoints that snap too far from an anchor. A response that cannot be normalized or fails those checks does not become a live observation. Only a complete, usable <code>LIVE</code> probe set receives the normal cache lifetimes: sixty seconds in memory and ninety seconds in Redis. <code>PARTIAL</code> and <code>UNAVAILABLE</code> results remain eligible to recover on the next request. Older cached failure documents are ignored too.</p>
+  <p>For example, if one of five probes times out while four return usable routes, the result is partial coverage. It must not hide the failed probe behind a successful-result cache. If the next request obtains all five usable routes, it can return live coverage immediately. This is an illustrative failure sequence, not a claim that an outage occurred at a particular time.</p>
+
+  <h3>What the tests prove, and what production still has to show</h3>
+  <p>The tests use controlled responses and a simulated clock to verify the timeout budget, one-retry limit, recovery, and absence of cache writes for failures. They also verify that official agency observations take priority where available. Passing those tests establishes the software contract; it does not establish that every outside feed is healthy today. The production smoke check separately reads the deployed page and API, validates the returned crossing records, and reports a temporary feed outage as degraded coverage.</p>
+  <p>Traffic observations also retain their scope. An approach segment, a crossing probe, and an address-to-address trip answer different questions. Mixing them into a &ldquo;fastest route&rdquo; ranking would imply a comparison the evidence cannot support. The tool keeps the cost decision useful while showing where current traffic evidence is incomplete.</p>
+  <p class="note">These notes describe the <a href="https://github.com/izworskic/chrisizworski-com/blob/9be13f871c6ea92db7ef2984725c4c7a804468de/lib/nyc-crossing/traffic.js">implementation reviewed on October 8, 2026</a> and its <a href="https://github.com/izworskic/chrisizworski-com/blob/9be13f871c6ea92db7ef2984725c4c7a804468de/tests/nyc-crossing-mapbox-reliability.test.js">matching reliability tests</a>. The links above to the main branch follow later changes.</p>
 
   <h2>Niagara Border Crossing Planner</h2>
   <p>The <a href="https://chrisizworski.com/niagara-border-crossing/">Niagara Border Crossing Planner</a> compares crossings for a particular direction, traveler, and lane. It incorporates the additional travel involved in a diversion, checks whether observations are fresh enough to support a recommendation, and exposes material disagreements between federal and operator reports.</p>
@@ -299,6 +309,7 @@ li{margin-bottom:8px;font-size:17px}
 
   <h2>Michigan Trout Report</h2>
   <p>The <a href="https://michigantroutreport.com/">Michigan Trout Report</a> brings stream flows, water temperatures, and weather context together for Michigan anglers. Named river pages, technique guides, hatch references, and the <a href="https://daily.michigantroutreport.com/">daily report</a> support planning around a particular river. <a href="https://michigantroutreport.com/chris-izworski">Chris's founder profile</a> describes his connection to the project.</p>
+  <p>The <a href="https://michigantroutreport.com/how-to-read-michigan-trout-water/#report-methodology">report methodology</a> follows an observation through freshness checks, the daily historical flow comparison, software ratings, and the written summary. It explains which parts are measurements and which are interpretation.</p>
 
   <h2>Michigan Birding Report</h2>
   <p>The <a href="https://michiganbirdingreport.com/">Michigan Birding Report</a> covers Michigan bird sightings, county-level birding context, and notable species pages built around live observation data. The <a href="https://daily.michiganbirdingreport.com/">daily birding report</a> publishes a fresh Michigan birding briefing each day. Both sites are designed around the rhythm of a working Michigan birder rather than the more generic checklist style of larger national platforms.</p>
