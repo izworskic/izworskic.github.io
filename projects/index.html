@@ -346,6 +346,12 @@ li{margin-bottom:8px;font-size:17px}
 .project-card .project-evidence{font:600 13px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;margin-bottom:0}
 .project-card a{overflow-wrap:anywhere}
 .portfolio-links{margin-top:22px;font-size:15px}
+.method-table-wrap{max-width:100%;overflow-x:auto;margin:16px 0}
+.method-table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}
+.method-table caption{text-align:left;font-weight:600;margin-bottom:8px}
+.method-table th,.method-table td{text-align:left;border:1px solid #e8e4dc;padding:10px;vertical-align:top;overflow-wrap:anywhere}
+.method-table thead{background:#f3efe7}
+#worked-examples a{overflow-wrap:anywhere}
 @media(max-width:620px){.project-grid{grid-template-columns:1fr}.project-card{padding:18px}}
 </style>
 </head>
@@ -368,7 +374,7 @@ li{margin-bottom:8px;font-size:17px}
 
   <p>I build tools that turn conditions into practical decisions: where to see fall color, when to watch a ship at the Soo Locks, and what the official bridge report means for a drive across the Straits. This portfolio connects those public tools to their methods, source code, and related work. &mdash; <a href="https://chrisizworski.com/chris-izworski/">Chris Izworski</a></p>
 
-  <nav class="project-jumps" aria-label="Explore project work"><a href="#featured-tools">Featured tools</a><a href="#nyc-reliability">Engineering notes</a><a href="#other-projects">More projects and writing</a></nav>
+  <nav class="project-jumps" aria-label="Explore project work"><a href="#featured-tools">Featured tools</a><a href="#worked-examples">Worked examples</a><a href="#nyc-reliability">NYC engineering notes</a><a href="#other-projects">More projects and writing</a></nav>
 
 
   <section class="featured" aria-labelledby="featured-tools">
@@ -405,6 +411,33 @@ li{margin-bottom:8px;font-size:17px}
       </article>
     </div>
     <p class="portfolio-links"><a href="https://chrisizworski.com/tools/">Browse the full tool collection</a> &middot; <a href="https://chrisizworski.com/chris-izworski-works/">Explore my works and publications</a></p>
+  </section>
+
+  <section aria-labelledby="worked-examples">
+    <h2 id="worked-examples">From source inputs to a planning answer</h2>
+    <p>These two worked examples explain choices I made in the tools. Their inputs are hypothetical, checked against the implementation reviewed on October 8, 2026. They are not current color readings or a ship schedule.</p>
+
+    <h3 id="fall-color-method">Fall Color: an older satellite reading gets less influence</h3>
+    <p>Suppose regional seasonal timing, recent weather, and any canopy-camera adjustment produce a model score of 80, while the satellite-derived score is 60. Hold those inputs fixed and change only the satellite reading's age:</p>
+    <div class="method-table-wrap"><table class="method-table">
+      <caption>Effect of satellite age on this hypothetical model score</caption>
+      <thead><tr><th scope="col">Reading age</th><th scope="col">Satellite share</th><th scope="col">Blended score</th></tr></thead>
+      <tbody><tr><th scope="row">5 days</th><td>40%</td><td>72</td></tr><tr><th scope="row">32.5 days</th><td>20%</td><td>76</td></tr><tr><th scope="row">45 days</th><td>0%</td><td>80</td></tr></tbody>
+    </table></div>
+    <p>The satellite-age weight is 1 through day 20, declines linearly to 0 at day 45, and scales a maximum 40% blend share. In the middle row, the weight is 0.5: the blend is 80 &times; 0.8 + 60 &times; 0.2 = 76. A stale image therefore cannot pull the estimate toward an old canopy state.</p>
+    <p>The output is a modeled seasonal-progression score, not a count of trees observed in color. The response records the inputs that actually influenced it and the satellite's date and weight. A traveler can use the regional comparison to choose where to investigate next, then check current sources and destination conditions. The AI-written regional note summarizes the model; it is not a firsthand field report.</p>
+    <p><a href="https://chrisizworski.com/fall-color/">Use Michigan Fall Color</a> &middot; <a href="https://github.com/izworskic/chrisizworski-com/blob/674422b08980c29cdad980e5aec37e4b1c3a9d77/lib/fall-color/model.js">Reviewed model and age-weight function</a> &middot; <a href="https://github.com/izworskic/chrisizworski-com/blob/674422b08980c29cdad980e5aec37e4b1c3a9d77/lib/fall-color/report-provenance.js">Written-report disclosure</a></p>
+
+    <h3 id="soo-locks-method">Soo Locks: a ship slows before it reaches the chamber</h3>
+    <p>Suppose a commercial ship has passed the freshness, channel, course, and destination checks. Its reported speed is 10 knots and its remaining distance along the modeled shipping channel is 11 nautical miles. Simply dividing the distance by the speed gives 66 minutes, but that misses the slow final approach:</p>
+    <div class="method-table-wrap"><table class="method-table">
+      <caption>Hypothetical arrival calculation from an accepted vessel snapshot</caption>
+      <thead><tr><th scope="col">Part of approach</th><th scope="col">Model assumption</th><th scope="col">Time</th></tr></thead>
+      <tbody><tr><th scope="row">First 10 nautical miles</th><td>10 knots</td><td>60 minutes</td></tr><tr><th scope="row">Final nautical mile</th><td>2.5 knots</td><td>24 minutes</td></tr><tr><th scope="row">Total to the locks</th><td>Slower final approach</td><td>84 minutes</td></tr></tbody>
+    </table></div>
+    <p>At 84 minutes, the code applies a 30% uncertainty margin: 25.2 minutes on either side. The resulting window is approximately 59 to 109 minutes after the snapshot, with an 84-minute midpoint. It is a window for planning a viewing visit, not an authority-issued chamber appointment.</p>
+    <p>Positions older than 30 minutes are excluded before candidate selection. The route follows the channel around the islands, and ships traveling away from the locks or with a contradictory destination do not qualify. Waiting, changes in speed, lock operations, and incomplete AIS reception can still move the real arrival. The tests check the geometry and the 84-minute approach calculation; they cannot guarantee a particular ship's transit today.</p>
+    <p><a href="https://chrisizworski.com/soo-locks/">Use the Soo Locks tool</a> &middot; <a href="https://github.com/izworskic/chrisizworski-com/blob/674422b08980c29cdad980e5aec37e4b1c3a9d77/lib/soo-locks-next.js">Reviewed arrival engine</a> &middot; <a href="https://github.com/izworskic/chrisizworski-com/blob/674422b08980c29cdad980e5aec37e4b1c3a9d77/tests/soo-locks-next.test.js">Channel and arrival regression tests</a></p>
   </section>
 
   <h2 id="nyc-reliability">NYC Crossing Decision Engine</h2>
